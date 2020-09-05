@@ -1,0 +1,45 @@
+/* line 1, ../Projetos/Vue/Bill/scss/style.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* line 10, ../Projetos/Vue/Bill/scss/style.scss */
+body {
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 16, ../Projetos/Vue/Bill/scss/style.scss */
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* line 21, ../Projetos/Vue/Bill/scss/style.scss */
+#painel {
+  background-color: #79D133;
+  color: white;
+  text-align: center;
+}
+
+/* line 26, ../Projetos/Vue/Bill/scss/style.scss */
+.produtos {
+  background-color: #f8f;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 31, ../Projetos/Vue/Bill/scss/style.scss */
+.produto {
+  width: 30%;
+}
+
+/* line 34, ../Projetos/Vue/Bill/scss/style.scss */
+.produto img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

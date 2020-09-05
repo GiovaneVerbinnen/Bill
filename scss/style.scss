@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+$cor-principal: #79D133;
+$cor-secundaria:  #f8f;
+
+body{
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  width: 960px;
+  margin: 0 auto;
+
+}
+#painel{
+  background-color: $cor-principal;
+  color: white;
+  text-align: center;
+}
+.produtos{ 
+  background-color: $cor-secundaria;
+  display: flex;
+  flex-wrap: wrap;
+}
+.produto{
+  width: 30%;
+}
+.produto img{
+  width: 100%;
+}

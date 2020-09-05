@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"scss/style.scss"
+	],
+	"sourcesContent": [
+		"*{\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n}\r\n\r\n$cor-principal: #79D133;\r\n$cor-secundaria:  #f8f;\r\n\r\nbody{\r\n  background-color: lightgray;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.container{\r\n  width: 960px;\r\n  margin: 0 auto;\r\n\r\n}\r\n#painel{\r\n  background-color: $cor-principal;\r\n  color: white;\r\n  text-align: center;\r\n}\r\n.produtos{ \r\n  background-color: $cor-secundaria;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n}\r\n.produto{\r\n  width: 30%;\r\n}\r\n.produto img{\r\n  width: 100%;\r\n}"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,CAAC,CAAA;EACC,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,WAAW,EAAE,+CAA+C;CAC7D;;;AAKD,AAAA,IAAI,CAAA;EACF,gBAAgB,EAAE,SAAS;EAC3B,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CACxB;;;AAED,AAAA,UAAU,CAAA;EACR,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,MAAM;CAEf;;;AACD,AAAA,OAAO,CAAA;EACL,gBAAgB,EAfF,OAAO;EAgBrB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,MAAM;CACnB;;;AACD,AAAA,SAAS,CAAA;EACP,gBAAgB,EAnBA,IAAI;EAoBpB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;CAChB;;;AACD,AAAA,QAAQ,CAAA;EACN,KAAK,EAAE,GAAG;CACX;;;AACD,AAAA,QAAQ,CAAC,GAAG,CAAA;EACV,KAAK,EAAE,IAAI;CACZ"
+}
