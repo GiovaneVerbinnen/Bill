@@ -4,6 +4,8 @@ const vm = new Vue({
     produtos: [],
     money: 100000000000,
     carrinho: [],
+    qtdProduto: 0,
+    carrinhoTotal: 0,
   },
   filters: {
     numeroPreco(valor) {
@@ -29,8 +31,8 @@ const vm = new Vue({
         this.produtos = r;
       })
     },
-    Buy() {
-      console.log(produto.preco);
+    Buy(event) {
+      console.log(event)
     }
   },
   created(){

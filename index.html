@@ -18,11 +18,14 @@
 
     <section class="produtos">
       <div v-for="produto in produtos" :key="produto.id" class="produto">
-        <h4>{{ produto.nome }}</h4>
         <img :src="produto.img" alt="" class="" />
-        <button>Sell</button>
-        <span class="preco_produto">{{ produto.preco | numeroPreco }}</span>
-        <button @click="Buy()">Buy</button>
+        <h4>{{ produto.nome }}</h4>
+        <span class="preco">{{ produto.preco | numeroPreco }}</span>
+        <div class="controles">
+          <button>Sell</button>
+          <input v-model="qtdProduto" class="qtd-produto" />
+          <button @click="Buy">Buy</button>
+        </div>
       </div>
     </section>
 

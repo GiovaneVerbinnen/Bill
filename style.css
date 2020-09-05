@@ -3,43 +3,101 @@
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
 }
 
-/* line 10, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 7, ../Projetos/Vue/Bill/scss/style.scss */
+button, input {
+  outline: none;
+}
+
+/*  ### CORES ### */
+/* line 16, ../Projetos/Vue/Bill/scss/style.scss */
 body {
-  background-color: lightgray;
+  background-color: #eee;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
-/* line 16, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 23, ../Projetos/Vue/Bill/scss/style.scss */
 .container {
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 21, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 28, ../Projetos/Vue/Bill/scss/style.scss */
 #painel {
-  background-color: #79D133;
   color: white;
+  background: linear-gradient(#2ecc71, #1abc9c);
+  padding: 20px;
+  margin: 10px 0px;
+  font-weight: bold;
+  text-align: center;
+  top: 0px;
+  position: sticky;
+  z-index: 9999;
+}
+
+/* line 39, ../Projetos/Vue/Bill/scss/style.scss */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  gap: 10px;
+}
+
+/* line 44, ../Projetos/Vue/Bill/scss/style.scss */
+.produto {
+  padding: 10px;
+  min-width: 30%;
+  background-color: #fff;
+}
+
+/* line 49, ../Projetos/Vue/Bill/scss/style.scss */
+.produto img {
+  width: 100%;
+}
+
+/* line 52, ../Projetos/Vue/Bill/scss/style.scss */
+.produto h4 {
+  font-size: 18px;
   text-align: center;
 }
 
-/* line 26, ../Projetos/Vue/Bill/scss/style.scss */
-.produtos {
-  background-color: #f8f;
-  display: flex;
-  flex-wrap: wrap;
+/* line 57, ../Projetos/Vue/Bill/scss/style.scss */
+.produto button {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #24c486;
+  cursor: pointer;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
 }
 
-/* line 31, ../Projetos/Vue/Bill/scss/style.scss */
-.produto {
-  width: 30%;
+/* line 66, ../Projetos/Vue/Bill/scss/style.scss */
+.qtd-produto {
+  text-align: center;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #b2bec3;
+  color: #333333;
 }
 
-/* line 34, ../Projetos/Vue/Bill/scss/style.scss */
-.produto img {
-  width: 100%;
+/* line 74, ../Projetos/Vue/Bill/scss/style.scss */
+.controles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/* line 80, ../Projetos/Vue/Bill/scss/style.scss */
+.preco {
+  color: #24c486;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

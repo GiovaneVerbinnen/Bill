@@ -2,15 +2,22 @@
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  }
+button, input{
+  outline: none;
 }
-
-$cor-principal: #79D133;
-$cor-secundaria:  #f8f;
+/*  ### CORES ### */
+$cor-base: #eee;
+$cor-principal: rgb(36, 196, 134);
+$cor-secundaria:  #D8FFDD;
+$cor-bg-produto: #fff;
 
 body{
-  background-color: lightgray;
+  background-color: $cor-base;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .container{
@@ -19,18 +26,60 @@ body{
 
 }
 #painel{
-  background-color: $cor-principal;
   color: white;
+  background: linear-gradient(rgb(46, 204, 113), rgb(26, 188, 156));
+  padding: 20px;
+  margin: 10px 0px;
+  font-weight: bold;
   text-align: center;
+  top: 0px;
+  position: sticky;
+  z-index: 9999;
 }
 .produtos{ 
-  background-color: $cor-secundaria;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  gap: 10px;
 }
 .produto{
-  width: 30%;
+  padding: 10px;
+  min-width: 30%;
+  background-color: $cor-bg-produto;
 }
 .produto img{
   width: 100%;
 }
+.produto h4{
+  font-size: 18px;
+  text-align: center;
+}
+
+.produto button{
+  font-size: 16px;
+  font-weight: bold;
+  background-color: $cor-principal;
+  cursor: pointer;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+}
+.qtd-produto{
+  text-align: center;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid rgb(178, 190, 195);
+  color: rgb(51, 51, 51);
+}
+.controles{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+.preco{
+  
+  color: $cor-principal;
+  font-weight: bold;
+  font-size: 20px;
+ }
