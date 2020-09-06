@@ -1,13 +1,13 @@
 const vm = new Vue({
-  el: "#app",
+  el: '#app',
   data: {
     produtos: [],
+    produto: false,
     money: 100000000000,
     carrinho: [],
-    qtdProduto: 0,
     carrinhoTotal: 0,
   },
-  filters: {
+ /* filters: {
     numeroPreco(valor) {
       return valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
     }
@@ -22,7 +22,7 @@ const vm = new Vue({
       }
       return total;
     }
-  },
+  },*/
   methods: {
     fetchProdutos() {
       fetch("./api/produtos.json")
@@ -31,8 +31,15 @@ const vm = new Vue({
         this.produtos = r;
       })
     },
-    Buy(event) {
-      console.log(event)
+  
+    Buy() {
+      this.produto.estoque++;
+      const { id, nome, preco } = this.produto;
+      console.log(id, nome, preco);
+      this.carrinho.push({id, nome, preco});
+    },
+    Sell(index){
+      this.carrinho.slice(index, 1);
     }
   },
   created(){
