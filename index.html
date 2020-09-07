@@ -22,9 +22,9 @@
         <h4>{{ item.nome }}</h4>
         <span class="preco">{{ item.preco  | numeroPreco }}</span>
         <div class="controles">
-          <button @click="vender(index)">Sell</button>
+          <button class="vender" @click="vender(index)">Vender</button>
             <input v-model="item.quantidade">
-          <button @click="comprar(item)">Buy</button>
+          <button class="comprar" @click="comprar(item)">Comprar</button>
         </div>
       </div>
     </section>
@@ -38,11 +38,14 @@
         <button @click="vender(index)">X</button>
       </li>
     </ul>
-    <p>{{carrinhoTotal}}</p>
+    <br>
+    <hr>
+    <h2 class="preco">{{carrinhoTotal | numeroPreco }}</h2>
+    <br>
   </div>
 
 
-  <footer>All rigths reserved.</footer>
+  <footer style="margin-top: 10px;">All rigths reserved.</footer>
 
 </div>
 
