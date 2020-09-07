@@ -4,14 +4,14 @@
     "nome": "Notebook",
     "preco": 2999,
     "img": "./api/produtos/notebook/notebook.jpg",
-    "estoque": 1
+    "quantidade": 0
   },
   {
     "id": "smartphone",
     "nome": "Smartphone",
     "preco": 1299,
     "img": "./api/produtos/smartphone/smartphone.jpg",
-    "estoque": 2
+    "quantidade": 0
     
   },
   {
@@ -19,20 +19,20 @@
     "nome": "Tablet",
     "preco": 899,
     "img": "./api/produtos/tablet/tablet.jpg",
-    "estoque": 4
+    "quantidade": 0
   },
   {
     "id": "smartwatch",
     "nome": "Smartwatch",
     "preco": 1199,
     "img": "./api/produtos/smartwatch/smartwatch.jpg",
-    "estoque": 0
+    "quantidade": 0
   },
   {
     "id": "speaker",
     "nome": "Speaker",
     "preco": 599,
     "img": "./api/produtos/speaker/speaker.jpg",
-    "estoque": 0
+    "quantidade": 0
   }
 ]

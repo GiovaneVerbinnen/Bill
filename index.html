@@ -15,42 +15,36 @@
           <h1>{{money}}</h1>
         </div>
     </header>
-
+   
     <section class="produtos">
-      <div v-for="produto in produtos" :key="produto.id" class="produto">
-        <img :src="produto.img" alt="" class="" />
-        <h4>{{ produto.nome }}</h4>
-        <span class="preco">{{ produto.preco }}</span>
+      <div v-for="item in produtos" :key="item.id" class="produto">
+        <img :src="item.img" alt="" class="" />
+        <h4>{{ item.nome }}</h4>
+        <span class="preco">{{ item.preco  | numeroPreco }}</span>
         <div class="controles">
-          <button>Sell</button>
-          <input class="qtd-produto" v-model="produto.estoque" />
-          <button @click="Buy">Buy</button>
+          <button @click="vender(index)">Sell</button>
+            <input v-model="item.quantidade">
+          <button @click="comprar(item)">Buy</button>
         </div>
       </div>
     </section>
 
-
-    <div class="carrinho_container">
-      <button class="carrinho_fechar" @click="carrinhoAtivo = false">X</button>
-      <h2 class="carrinho_titulo">Carrinho</h2>
-      <div v-if="carrinho.length > 0">
-        <ul class="carrinho_lista">
-          <li v-for="(produto, index) in carrinho" class="carrinho_item">
-            <p>{{ produto.nome }}</p>
-            <p class="carrinho_preco">{{ produto.preco  }}</p>
-            <button class="carrinho_remover" @click="removerItem(index)">X</button>
-          </li>
-        </ul>
-        <p class="carrinho_total">{{ carrinhoTotal }}</p>
-        <button class="carrinho_finaliar">Finalizar Compra</button>
-      </div>
-      <p v-else>O carrinho está cazio</p>
-    </div>
-
-
   </div>
-</div>
 
+  <div v-if="carrinho.length > 0" class="carrinho">
+    <ul>
+      <li v-for="(item, index) in carrinho">
+        <p> <strong> {{item.nome}} X {{item.quantidade}} </strong> <span class="preco">{{item.preco | numeroPreco}} </span></p>
+        <button @click="vender(index)">X</button>
+      </li>
+    </ul>
+    <p>{{carrinhoTotal}}</p>
+  </div>
+
+
+  <footer>All rigths reserved.</footer>
+
+</div>
 
 <script src="./app.js"></script>
 </body>

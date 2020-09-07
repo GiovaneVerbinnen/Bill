@@ -4,15 +4,16 @@
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: none;
+  list-style: none;
 }
 
-/* line 7, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 8, ../Projetos/Vue/Bill/scss/style.scss */
 button, input {
   outline: none;
 }
 
 /*  ### CORES ### */
-/* line 16, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 17, ../Projetos/Vue/Bill/scss/style.scss */
 body {
   background-color: #eee;
   display: flex;
@@ -20,13 +21,13 @@ body {
   text-align: center;
 }
 
-/* line 23, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 24, ../Projetos/Vue/Bill/scss/style.scss */
 .container {
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 28, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 29, ../Projetos/Vue/Bill/scss/style.scss */
 #painel {
   color: white;
   background: linear-gradient(#2ecc71, #1abc9c);
@@ -39,32 +40,32 @@ body {
   z-index: 9999;
 }
 
-/* line 39, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 40, ../Projetos/Vue/Bill/scss/style.scss */
 .produtos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0px, 1fr));
   gap: 10px;
 }
 
-/* line 44, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 45, ../Projetos/Vue/Bill/scss/style.scss */
 .produto {
   padding: 10px;
   min-width: 30%;
   background-color: #fff;
 }
 
-/* line 49, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 50, ../Projetos/Vue/Bill/scss/style.scss */
 .produto img {
   width: 100%;
 }
 
-/* line 52, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 53, ../Projetos/Vue/Bill/scss/style.scss */
 .produto h4 {
   font-size: 18px;
   text-align: center;
 }
 
-/* line 57, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 58, ../Projetos/Vue/Bill/scss/style.scss */
 .produto button {
   font-size: 16px;
   font-weight: bold;
@@ -75,7 +76,7 @@ body {
   color: white;
 }
 
-/* line 66, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 67, ../Projetos/Vue/Bill/scss/style.scss */
 .qtd-produto {
   text-align: center;
   height: 40px;
@@ -85,7 +86,7 @@ body {
   color: #333333;
 }
 
-/* line 74, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 75, ../Projetos/Vue/Bill/scss/style.scss */
 .controles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -93,11 +94,30 @@ body {
   margin-top: 25px;
 }
 
-/* line 80, ../Projetos/Vue/Bill/scss/style.scss */
+/* line 81, ../Projetos/Vue/Bill/scss/style.scss */
 .preco {
   color: #24c486;
   font-weight: bold;
   font-size: 20px;
+}
+
+/* line 87, ../Projetos/Vue/Bill/scss/style.scss */
+.carrinho {
+  width: 50%;
+  margin: 10px auto;
+  background: #fff;
+}
+
+/* line 92, ../Projetos/Vue/Bill/scss/style.scss */
+.carrinho ul li {
+  border-bottom: 1px solid #D8FFDD;
+}
+
+/* line 95, ../Projetos/Vue/Bill/scss/style.scss */
+footer {
+  background: #24c486;
+  color: #eee;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

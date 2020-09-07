@@ -3,6 +3,7 @@
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: none;
+  list-style: none;
   }
 button, input{
   outline: none;
@@ -82,4 +83,17 @@ body{
   color: $cor-principal;
   font-weight: bold;
   font-size: 20px;
+ }
+.carrinho{
+  width: 50%;
+  margin: 10px auto;
+  background: $cor-bg-produto;
+}
+.carrinho ul li{
+  border-bottom: 1px solid $cor-secundaria;
+}
+ footer{
+   background: $cor-principal;
+   color: $cor-base;
+   padding: 1rem;
  }
