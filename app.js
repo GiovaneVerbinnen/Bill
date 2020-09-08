@@ -1,52 +1,56 @@
 const vm = new Vue({
   el: '#app',
   data: {
+    saldoinicial: 10000,
+
     produtos: [],
     carrinho: [],
-    saldoinicial: 100000000000,
+    inputProdutoQuantidade: {}
   },
+
  filters: {
     numeroPreco(valor) {
       return valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
     }
   },
+
   computed: {
     carrinhoTotal() {
-      let total = 0;
-      if(this.carrinho.length) {
-        this.carrinho.forEach(item => {
-          total += item.preco * item.quantidade;
-        })
-      }
-      return total;
+      return this.carrinho.reduce((acm, produto) => 
+          acm + produto.preco, 0);
     },
-    saldo() {
-      soma = this.saldoinicial - this.carrinhoTotal;
-      return soma;
+
+    saldo() { 
+      return this.saldoinicial - this.carrinhoTotal;
     }
   },
+
   methods: {
-    fetchProdutos() {
-      fetch("./api/produtos.json")
-      .then(r => r.json())
-      .then(r => {
-        this.produtos = r;
-      })
+    async fetchProdutos() {
+      const dataApi = await fetch("./api/produtos.json");
+
+      this.produtos = await dataApi.json();
+
+      this.inputProdutoQuantidade = this.produtos.reduce((acm, p) => (
+        {...acm, [p.nome]: p.quantidade}), {});
     },
+  
     comprar(produto) {
-      if (produto.quantidade < 1){
-        produto.quantidade += 1;
-      } else if (typeof(produto.quantidade) === "string") {
-        produto.quantidade = parseInt(produto.quantidade);
-       } else{
-          produto.quantidade++;
-      }
-      const {id, nome, preco, quantidade} = produto;
-      this.carrinho.push({id, nome, preco, quantidade});
+      if (this.saldo < produto.preco)
+        return;
+      
+      this.carrinho.push(produto);
+      this.inputProdutoQuantidade[produto.nome]++;
     },
-    vender(produto,index){
-      console.log(produto, index);
+  
+    vender(produto){
+      if (!this.inputProdutoQuantidade[produto.nome])
+        return;
+      
+      const index = this.carrinho.findIndex(prod => prod.nome === produto.nome);
+
       this.carrinho.splice(index, 1);
+      this.inputProdutoQuantidade[produto.nome]--;
     }
   },
  
