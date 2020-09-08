@@ -12,41 +12,38 @@
   <div class="container">
     <header>
         <div id="painel">
-          <h1>{{money}}</h1>
+          <h1>{{saldo | numeroPreco }}</h1>
         </div>
     </header>
    
     <section class="produtos">
-      <div v-for="item in produtos" :key="item.id" class="produto">
+      <div v-for="(item, index) in produtos" :key="item.id" class="produto">
         <img :src="item.img" alt="" class="" />
         <h4>{{ item.nome }}</h4>
         <span class="preco">{{ item.preco  | numeroPreco }}</span>
         <div class="controles">
-          <button class="vender" @click="vender(index)">Vender</button>
-            <input v-model="item.quantidade">
+          <button v-if="item.quantidade >= 1" class="vender" @click="vender(index)">Vender</button>
+          <button v-else class="desabilitado" disabled>Vender</button>
+            <input v-model="item.quantidade" class="qtd-produto">
           <button class="comprar" @click="comprar(item)">Comprar</button>
         </div>
       </div>
     </section>
-
   </div>
 
   <div v-if="carrinho.length > 0" class="carrinho">
     <ul>
+      <h3>Seu carrinho:</h3>
       <li v-for="(item, index) in carrinho">
-        <p> <strong> {{item.nome}} X {{item.quantidade}} </strong> <span class="preco">{{item.preco | numeroPreco}} </span></p>
-        <button @click="vender(index)">X</button>
+          <span><strong> {{item.nome}}</strong> </span>
+          <span> X {{item.quantidade}} </span>
+          <span class="preco">{{item.preco * item.quantidade | numeroPreco}} </span>
       </li>
     </ul>
-    <br>
-    <hr>
+    <h3>Total: </h3>
     <h2 class="preco">{{carrinhoTotal | numeroPreco }}</h2>
-    <br>
   </div>
-
-
-  <footer style="margin-top: 10px;">All rigths reserved.</footer>
-
+  <footer style="margin-top: 10px;">All rights reserved.</footer>
 </div>
 
 <script src="./app.js"></script>

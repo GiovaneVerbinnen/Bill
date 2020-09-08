@@ -3,6 +3,7 @@ const vm = new Vue({
   data: {
     produtos: [],
     carrinho: [],
+    saldoinicial: 100000000000,
   },
  filters: {
     numeroPreco(valor) {
@@ -14,14 +15,14 @@ const vm = new Vue({
       let total = 0;
       if(this.carrinho.length) {
         this.carrinho.forEach(item => {
-          total += item.preco;
+          total += item.preco * item.quantidade;
         })
       }
       return total;
     },
-    money(){
-      let valor = 10000000000;
-      return valor;
+    saldo() {
+      soma = this.saldoinicial - this.carrinhoTotal;
+      return soma;
     }
   },
   methods: {
@@ -33,11 +34,18 @@ const vm = new Vue({
       })
     },
     comprar(produto) {
-      produto.quantidade++;
+      if (produto.quantidade < 1){
+        produto.quantidade += 1;
+      } else if (typeof(produto.quantidade) === "string") {
+        produto.quantidade = parseInt(produto.quantidade);
+       } else{
+          produto.quantidade++;
+      }
       const {id, nome, preco, quantidade} = produto;
       this.carrinho.push({id, nome, preco, quantidade});
     },
-    vender(index){
+    vender(produto,index){
+      console.log(produto, index);
       this.carrinho.splice(index, 1);
     }
   },
